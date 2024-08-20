@@ -1,13 +1,13 @@
 ####
 # moteino.cmake:
 #
-# Moteino USB atmega328PB support file. This file ensures that the
+# Moteino USB atmega328P support file. This file ensures that the
 # Moteino USB can be used as a target for the CMake system's output. This
-# sets the Arduino target to be the Moteino USB atmega328PB.
+# sets the Arduino target to be the Moteino USB atmega328P.
 ####
 
 
-# System setup for MegaCore
+# System setup for MiniCore
 set(CMAKE_SYSTEM_NAME "Generic")
 set(CMAKE_SYSTEM_PROCESSOR "avr")
 set(CMAKE_CROSSCOMPILING 1)
@@ -16,7 +16,7 @@ set(FPRIME_USE_BAREMETAL_SCHEDULER ON)
 # set(ARDUINO_LIBRARIES "SPI.h" "Wire.h" "TimerOne.h")
 set(ARDUINO_BUILD_PROPERTIES "build.extra_flags=-DTIMER1_A_PIN=13 -DTIMSK1=TIMSK")
 
-# uses an atmega328P
+# uses an atmega328P or atmega328PB
 set(ARDUINO_FQBN "Moteino:avr:Moteino")
 add_compile_options(-DATMEGA)
 # Run the base arduino setup which should detect settings!
